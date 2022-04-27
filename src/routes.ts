@@ -1,5 +1,7 @@
+import { AddToQueue } from '@mui/icons-material';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
+import { DomManipulationView } from '@views/user/DomManipulationView';
 import { UserDashboardView } from '@views/user/UserDashboardView';
 import { UserHistoryView } from '@views/user/UserHistoryView';
 import { ReactElement } from 'react';
@@ -25,5 +27,12 @@ export const userRoutes: Route[] = [
     component: UserHistoryView,
     layout: '/user',
     icon: HistoryRoundedIcon,
+  },
+  {
+    path: '/extension',
+    name: 'DOM Manipulation',
+    component: DomManipulationView,
+    layout: '/user',
+    icon: AddToQueue,
   },
 ];

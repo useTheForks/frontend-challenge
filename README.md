@@ -4,6 +4,9 @@
 #### Table of Contents
 
 - [Description](#description)
+- [Mandatory Tasks](#mandatory-tasks)
+- [Optional Tasks](#optional-tasks)
+- [Submission](#submission)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Project Structure](#project-structure)
@@ -12,35 +15,69 @@
 
 ---
 
-### Description
+## Description
 
 This repo contains base code for the eco.mio frontend hiring challenge.
 
+What you are looking at is a simplified version of our web application, with the backend removed and some dummy data provided via a JSON file (`dummyData.json`).
+
+We expect you to not spend more than 2 hours on the tasks. We do not expect you to finish implementing everything. The main goal is for you to be able to show us where your skills lie and to give us a basis for discussions later on in the hiring process.
+
+### Mandatory Tasks
+1. To warm up, please create a "CO2 Savings" overview on the dashboard. It should look like the one for the "rewards", showing a total and this months value, but for CO2 savings. As a reference, this is how it should look like (__correct styling is optional__): 
+
+    ![CO2 component](/CO2%20component.png)
+
+2. To emulate the tasks we face for our browser extension, we are embedding a so-called `contentscript.js` in the DOM Manipulation view (`DomManipulationView.tsx`) . Your goal is to add an element to the DOM displaying the text "Budget-to-Beat: " and the € value you find on the same page. \
+There is already some code commented out that you can use as a starting point. The element should be appended from within the `contentscript.js` without modifying `DomManipulationView.tsx` and without hard-coding of the € value. \
+At the end, your solution should look somewhat like this (styling does __not__ need to be exactly as shown):
+
+    ![DOM Manipulation](/dom%20manipulation.png)
+
+### Optional Tasks
+Time permitting, you may choose any one (or more) from the below tasks to show us what you got:
+1. Create your own __theme__ and make it selectable from a button.
+2. Add a __hover effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change. 
+3. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
+4. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+
+### Submission
+Once you are done, please push everything to your fork and notify Mario via email.
+
 ---
 
-### Prerequisites
+## Prerequisites
 
 To build and run the different parts of this repository, following tools need to be installed:
 
-- `Node.js` as a runtime environment
+- `Node.js` as a runtime environment, including `npm` as a package manager
+- An IDE (e.g. VSCode)
+- A web browser
+- __2 hours max__ of time (we mean it!)
+- Coffee (optional :-))
 
 ---
 
-### Installation
+## Installation
 
 To install the project and get it started, you have to perform the following steps:
 
-1. Clone the repository
+1. Fork the repository
+2. Clone your fork
 2. Run `npm i` in the repository folder to install the necessary dependencies
 3. Run `npm run serve` to start the application on port `3000`
 
-It runs without a backend, so you should be ready to go.
+It runs without a backend, so you are ready to go.
+
+---
+
+## Further Helpful Information
 
 ---
 
 ### Project Structure
 
-The src folder of the project is structured as follows:
+To give you a bit of an overview of the project we provide here an explanation of the structure. The src folder of the project is structured as follows:
 
     src
     ├── assets
@@ -87,3 +124,11 @@ This is a list of tools, used in the project
 - `Prettier:` code formatter
 - `Webpack:` module bundler for JavaScript projects
 - `Jest:` testing library for JavaScript projects
+
+---
+
+---
+
+# Good Luck!
+
+_And if you encounter any problem, please contact Mario via email._

@@ -3,16 +3,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-const SRC_DIRECTORY = path.resolve(__dirname, '..', 'src');
+const SRC_DIRECTORY = path.resolve(__dirname, '.', 'src');
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '.', 'dist'),
   },
   cache: {
     type: 'filesystem',
+  },
+  mode: 'development',
+  devServer: {
+    hot: true,
+    port: 3000,
+    historyApiFallback: true,
+    watchFiles: {
+      options: {
+        ignored: /node_modules|\.jsx?$|\.d.ts$/,
+      },
+    },
   },
   module: {
     rules: [
@@ -28,7 +39,6 @@ module.exports = {
           },
         },
       },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.html$/,
         use: [
@@ -68,7 +78,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html'),
+      template: path.resolve(__dirname, './public/index.html'),
       inject: 'body',
       favicon: './src/assets/img/logos/favicon.ico',
     }),
@@ -77,8 +87,7 @@ module.exports = {
       systemvars: true,
     }),
     new CopyPlugin({
-      patterns: [{ from: 'public/netlify', to: '' }],
-      patterns: [{ from: 'public/images', to: '' }],
+      patterns: [{ from: 'public/images', to: '' }, { from: 'public/contentscript.js', to: '' }],
     }),
   ],
 };

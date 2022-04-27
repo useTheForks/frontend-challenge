@@ -1,34 +1,17 @@
 {
-  "name": "traveller_tool",
+  "name": "frontend-challenge",
   "version": "0.0.1",
   "private": true,
-  "description": "eco.mio Webtool",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ecomio/frontend.git"
-  },
-  "author": "eco.mio GmbH <support@ecomio.com> (https://www.ecomio.com/)",
+  "description": "eco.mio Frontend Challenge",
   "main": "dist/index.js",
   "scripts": {
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run serve",
     "lint": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
     "lint:check": "eslint src/**/*.{js,ts,tsx}",
-    "serve": "webpack serve --mode none --color --hot --progress --config ./webpack/webpack.dev.js",
-    "serve:network": "webpack serve --mode development --color --hot --progress --config ./webpack/webpack.dev.js --host 0.0.0.0",
-    "build": "webpack --config ./webpack/webpack.prod.js",
+    "serve": "webpack serve --mode none --color --hot --progress --config ./webpack.config.js",
     "test": "jest --testPathIgnorePatterns src/tests/e2e/*",
     "test:e2e": "jest --testPathPattern src/tests/e2e/*",
     "test:watch": "jest --watch"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
   },
   "browserslist": [
     ">0.2%",
@@ -36,15 +19,12 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:8000/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.0",
     "@mui/material": "^5.3.0",
     "@mui/styles": "^5.3.0",
-    "match-sorter": "^6.3.1",
-    "moment": "^2.29.2",
     "react": "^17.0.2",
     "react-custom-scrollbars-2": "^4.4.0",
     "react-dom": "17.0.2",
@@ -88,7 +68,6 @@
     "prettier": "^2.5.1",
     "puppeteer": "^13.3.2",
     "react-test-renderer": "^17.0.2",
-    "source-map-loader": "^3.0.1",
     "svg-jest": "^1.0.1",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
