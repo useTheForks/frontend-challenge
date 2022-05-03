@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
 export const getMonthName = (index: number): string => {
   const months = [
     'January',
-    'Feburary',
+    'February',
     'March',
     'April',
     'May',
