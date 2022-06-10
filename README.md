@@ -34,12 +34,13 @@ At the end, your solution should look somewhat like this (styling does __not__ n
 
     ![DOM Manipulation](/dom%20manipulation.png)
 
+3. Add a __hover effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change.
+
 ### Optional Tasks
 Time permitting, you may choose any one (or more) from the below tasks to show us what you got:
 1. Create your own __theme__ and make it selectable from a button.
-2. Add a __hover effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change. 
-3. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
-4. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+2. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
+3. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
 
 ### Submission
 Once you are done, please push everything to your fork and notify Mario via email.
