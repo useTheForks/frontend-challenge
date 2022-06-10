@@ -38,9 +38,10 @@ At the end, your solution should look somewhat like this (styling does __not__ n
 
 ### Optional Tasks
 Time permitting, you may choose any one (or more) from the below tasks to show us what you got:
-1. Create your own __theme__ and make it selectable from a button.
-2. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
-3. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+1. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
+2. Add a test (e.g. snapshot, end-to-end, ...) to the project in `src/tests`. `jest` is installed if you want to work with it. Run it with `npm run test` or `npm run test:e2e`, respectively.
+3. Create your own __theme__ and make it selectable from a button.
+4. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
 
 ### Submission
 Once you are done, please push everything to your fork and notify Mario via email.
