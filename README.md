@@ -24,24 +24,20 @@ What you are looking at is a simplified version of our web application, with the
 We expect you to not spend more than 2 hours on the tasks. We do not expect you to finish implementing everything. The main goal is for you to be able to show us where your skills lie and to give us a basis for discussions later on in the hiring process.
 
 ### Mandatory Tasks
-1. To warm up, please create a "CO2 Savings" overview on the dashboard. It should look like the one for the "rewards", showing a total and this months value, but for CO2 savings. As a reference, this is how it should look like (__correct styling is optional__): 
 
-    ![CO2 component](/CO2%20component.png)
-
-2. To emulate the tasks we face for our browser extension, we are embedding a so-called `contentscript.js` in the DOM Manipulation view (`DomManipulationView.tsx`) . Your goal is to add an element to the DOM displaying the text "Budget-to-Beat: " and the € value you find on the same page. \
+1. To emulate the tasks we face for our browser extension, we are embedding a so-called `contentscript.js` in the DOM Manipulation view (`DomManipulationView.tsx`) . Your goal is to add an element to the DOM displaying the text "Budget-to-Beat: " and the € value you find on the same page. \
 There is already some code commented out that you can use as a starting point. The element should be appended from within the `contentscript.js` without modifying `DomManipulationView.tsx` and without hard-coding of the € value. \
 At the end, your solution should look somewhat like this (styling does __not__ need to be exactly as shown):
 
     ![DOM Manipulation](/dom%20manipulation.png)
-
-3. Add a __hover effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change.
+2. Add a __hover or click effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change.
+3. Add a test (e.g. snapshot, end-to-end, ...) to the project in `src/tests`. `jest` is installed if you want to work with it. Run it with `npm run test` or `npm run test:e2e`, respectively.
 
 ### Optional Tasks
 Time permitting, you may choose any one (or more) from the below tasks to show us what you got:
 1. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
-2. Add a test (e.g. snapshot, end-to-end, ...) to the project in `src/tests`. `jest` is installed if you want to work with it. Run it with `npm run test` or `npm run test:e2e`, respectively.
-3. Create your own __theme__ and make it selectable from a button.
-4. Use your own creativity. Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+2. Create your own __theme__ and make it selectable from a button.
+3. __Be creative__! Prototype a new feature, view, styling, ... that you think could be valuable to our users.
 
 ### Submission
 Once you are done, please push everything to your fork and notify Mario via email.
