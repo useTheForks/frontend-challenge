@@ -19,7 +19,7 @@
 
 This repo contains base code for the eco.mio frontend hiring challenge.
 
-What you are looking at is a simplified version of our web application, with the backend removed and some dummy data provided via a JSON file (`dummyData.json`).
+What you are looking at is a simplified version of our web application and DOM manipulation script similar to the one we use for our browser extension.
 
 We expect you to not spend more than 2 hours on the tasks. We do not expect you to finish implementing everything. The main goal is for you to be able to show us where your skills lie and to give us a basis for discussions later on in the hiring process.
 
@@ -31,16 +31,17 @@ At the end, your solution should look somewhat like this (styling does __not__ n
 
     ![DOM Manipulation](/dom%20manipulation.png)
 2. Add a __hover or click effect__ on the injected element in the `contentscript` providing more detailed dummy information on climate change.
-3. Add a test (e.g. snapshot, end-to-end, ...) to the project in `src/tests`. `jest` is installed if you want to work with it. Run it with `npm run test` or `npm run test:e2e`, respectively.
+3. Now please add a pragraph to the text that includes the description of the first three repositories that appear when you query the GitHub Search API for Climate Change. Docs: https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-repositories.
+4. Add a test (e.g. snapshot, end-to-end, ...) to the project in `src/tests`. `jest` is installed if you want to work with it. Run it with `npm run test` or `npm run test:e2e`, respectively.
 
 ### Optional Tasks
 Time permitting, you may choose any one (or more) from the below tasks to show us what you got:
-1. Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
-2. Create your own __theme__ and make it selectable from a button.
-3. __Be creative__! Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+- __Be creative__! Prototype a new feature, view, styling, ... that you think could be valuable to our users.
+- Create a 'History' view, allowing a user to view their past trips in tabular way. You may add some dummy data or use the one provided in `dummyData.json`
+- Create your own theme and make it selectable from a button.
 
 ### Submission
-Once you are done, please push everything to your fork and notify Mario via email.
+Once you are done, please push everything to your fork and notify Mario via email (m (at) ecomio.com).
 
 ---
 
@@ -129,4 +130,4 @@ This is a list of tools, used in the project
 
 # Good Luck!
 
-_And if you encounter any problem, please contact Mario via email._
+_And if you encounter any problem, please contact Mario via email (m (at) ecomio.com)._
