@@ -76,6 +76,17 @@ function applyBalloonElem(elem, text) {
   return { element: balloon, mouseMoveListener };
 }
 
+function extractBudgetToBeat() {
+  // TODO: Create a more generalized solution to query the div.
+  const budgetToBeat = document.querySelector(
+    '#root > div.makeStyles-app-1 > div > div.makeStyles-mainPanel-3 > div.makeStyles-scrollbars-5 > div:nth-child(1) > div > section > div:nth-child(3) > p.makeStyles-btb-27',
+  );
+
+  if (budgetToBeat) {
+    return budgetToBeat.innerText;
+  }
+}
+
 /** The main function */
 function main() {
   const parentElement = document.querySelector(
@@ -97,9 +108,8 @@ function main() {
 
   overlayElem.appendChild(document.createElement('div'));
 
-  const budgetToBeatBtn = createBudgetToBeatButton();
+  const budgetToBeatBtn = createBudgetToBeatButton(`Budget-to-beat: ${extractBudgetToBeat()}`);
   parentElement.appendChild(budgetToBeatBtn);
-
   let balloonElem;
   let balloonMouseMoveListener;
   parentElement.onmouseenter = () => {
