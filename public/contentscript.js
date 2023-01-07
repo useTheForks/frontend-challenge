@@ -48,13 +48,70 @@ function createBudgetToBeatButton(text = 'Budget-to-beat') {
   return button;
 }
 
+function applyBalloonElem(elem, text) {
+  const balloon = document.createElement('div');
+  balloon.innerText = text;
+
+  applyStyle(balloon, {
+    position: 'absolute',
+    backgroundColor: 'white',
+    padding: '0.5em',
+    borderRadius: '0.5em',
+    width: '12em',
+    boxShadow: '0 0 0.5em 0.1em rgba(0, 0, 0, 0.2)',
+    zIndex: 2,
+  });
+
+  const mouseMoveListener = (event) => {
+    applyStyle(balloon, {
+      top: `${event.clientY}px`,
+      left: `calc(${event.clientX}px - 12em)`,
+      fontSize: '1em',
+    });
+  };
+
+  window.addEventListener('mousemove', mouseMoveListener);
+  elem.appendChild(balloon);
+
+  return { element: balloon, mouseMoveListener };
+}
+
 /** The main function */
 function main() {
   const parentElement = document.querySelector(
     '#root > div > div > div.makeStyles-mainPanel-3 > div.makeStyles-scrollbars-5 > div:nth-child(1) > div > section > h1',
   );
 
-  parentElement.appendChild(createBudgetToBeatButton());
+  const rootElem = document.querySelector('#root');
+  const overlayElem = document.createElement('div');
+  rootElem.appendChild(overlayElem);
+  applyStyle(overlayElem, {
+    position: 'relative',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    overflow: 'hidden',
+    pointerEvents: 'none',
+  });
+
+  overlayElem.appendChild(document.createElement('div'));
+
+  const budgetToBeatBtn = createBudgetToBeatButton();
+  parentElement.appendChild(budgetToBeatBtn);
+
+  let balloonElem;
+  let balloonMouseMoveListener;
+  parentElement.onmouseenter = () => {
+    const balloon = applyBalloonElem(overlayElem, 'Climate change is real. Travel responsibly.');
+    balloonElem = balloon.element;
+    balloonMouseMoveListener = balloon.mouseMoveListener;
+  };
+
+  parentElement.onmouseleave = () => {
+    window.removeEventListener('mousemove', balloonMouseMoveListener);
+    balloonElem.remove();
+  };
 
   // Render button to the right of the page
   applyStyle(parentElement, {
