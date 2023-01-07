@@ -87,6 +87,24 @@ function extractBudgetToBeat() {
   }
 }
 
+function getGithubRepoDescriptions(query = 'climate%20change', perPage = 3) {
+  return fetch(`https://api.github.com/search/repositories?q=${query}&per_page=${perPage}`).then((response) => {
+    return response.json().then((data) => {
+      if (data && data.items) {
+        return data.items.map((item) => {
+          return item.description;
+        });
+      }
+    });
+  });
+}
+
+function addParagraph(elem, text) {
+  const p = document.createElement('p');
+  p.innerText = text;
+  elem.appendChild(p);
+}
+
 /** The main function */
 function main() {
   const parentElement = document.querySelector(
@@ -107,6 +125,12 @@ function main() {
   });
 
   overlayElem.appendChild(document.createElement('div'));
+  // Render button to the right of the page
+  applyStyle(parentElement, {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  });
 
   const budgetToBeatBtn = createBudgetToBeatButton(`Budget-to-beat: ${extractBudgetToBeat()}`);
   parentElement.appendChild(budgetToBeatBtn);
@@ -123,11 +147,16 @@ function main() {
     balloonElem.remove();
   };
 
-  // Render button to the right of the page
-  applyStyle(parentElement, {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  // Add Github info
+  const contentElem = document.querySelector(
+    '#root > div.makeStyles-app-1 > div > div.makeStyles-mainPanel-3 > div.makeStyles-scrollbars-5 > div:nth-child(1) > div',
+  );
+  const githubSection = document.createElement('section');
+  contentElem.appendChild(githubSection);
+  getGithubRepoDescriptions().then((descriptions) => {
+    descriptions.map((description) => {
+      addParagraph(githubSection, description);
+    });
   });
 }
 
